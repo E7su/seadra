@@ -101,6 +101,11 @@ done
 
 echo 'done'
 """.format(max_dat=max_dat, min_dat=min_dat, table=table, name=name, column=column, start_date='{start_date}')
+    
+    path_file = '/home/scripts/bash/partition/to_hdfs_{table}.sh'.format(table=table)
+    f = open(path_file, 'w')
+    f.write(str_1 + '\n')
+    
     part_table.append(bash_part_str)
     print(bash_part_str)
     print('=' * 80)
@@ -117,5 +122,10 @@ for strings in full:
     --split-by {column} -m 7 --hive-import --hive-database database_name --hive-table {table}""".format(
         name=name, table=table.lower(), column=column)
     full_table.append(sqoop_str)
+    
+    path_file = '/home/scripts/bash/full/to_hdfs_{table}.sh'.format(table=table)
+    f = open(path_file, 'w')
+    f.write(str + '\n')
+    
     print(sqoop_str)
     print('-' * 80)
