@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 end_date=$(date -d '2017-04-24' +'%Y%m%d')
 start_date=$(date -d '2013-01-01' +'%Y%m%d')
