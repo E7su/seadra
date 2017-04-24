@@ -1,0 +1,2 @@
+# seadra
+sqoop
